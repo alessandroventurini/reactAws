@@ -1,0 +1,9 @@
+.center_div{
+    margin: 0 auto;
+    width:50%; /* value of your choice which suits your alignment */
+    margin-top: 5vh;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #282c34;
+    padding: 5%;
+}

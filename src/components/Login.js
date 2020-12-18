@@ -43,11 +43,18 @@ class Login extends Component{
     render()
     {
         return (
-            <div>
+            <div className='container center_div'>
+                <h1>LOGIN</h1>
                 <form onSubmit={this.onSubmit}>
-                    <input type="text" value={this.state.email} onChange={event => this.setState({ email : event.target.value})}/>
-                    <input type="password" value={this.state.password} onChange={event => this.setState({ password : event.target.value})}/>
-                    <button type="submit">Login</button>
+                    <div className='input-group mb-3'>
+                        <span className="input-group-text">Email</span>
+                        <input type="text" className='form-control' value={this.state.email} onChange={event => this.setState({ email : event.target.value})}/>
+                    </div>
+                    <div className="input-group mb-3">
+                        <span className="input-group-text">Password</span>
+                        <input type="password" className='form-control' value={this.state.password} onChange={event => this.setState({ password : event.target.value})}/>
+                    </div>
+                    <button type="submit" className='btn btn-dark'>Sign Up</button>
                 </form>
             </div>
         );
