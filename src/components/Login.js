@@ -21,7 +21,7 @@ export default () => {
 
     return (
         <div className='container center_div'>
-            <h1>LOGIN</h1>
+            <h1>L O G I N</h1>
             <form onSubmit={onSubmit}>
                 <div className='input-group mb-3'>
                     <span className="input-group-text">Email</span>
