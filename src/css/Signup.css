@@ -1,9 +1,23 @@
 .center_div{
-    margin: 0 auto;
     width:50%; /* value of your choice which suits your alignment */
-    margin-top: 5vh;
+    margin: 5vh auto 0;
     border-width: 1px;
     border-style: solid;
     border-color: #282c34;
     padding: 5%;
+}
+
+.status{
+    margin-top: 20%;
+    margin-left: 90%;
+}
+
+.warning{
+    margin-top: 10px;
+}
+
+.confirmMessage{
+
+    margin: 2% 0;
+
 }

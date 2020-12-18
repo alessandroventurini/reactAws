@@ -1,17 +1,19 @@
 import './App.css';
+import './css/Signup.css'
 import React, {Component} from 'react';
-import Signup from "./components/Signup";
-import Login from "./components/Login";
+import Nav from "./components/Nav";
+import Main from "./components/Main";
+import {Account} from "./components/Accounts";
 
 class App extends Component{
 
     render()
     {
         return (
-            <div>
-                <Signup />
-                <Login />
-            </div>
+            <Account>
+                <Nav />
+                <Main />
+            </Account>
         );
     }
 }

@@ -1,45 +1,33 @@
-import React, {Component} from 'react';
-import UserPool from "../UserPool";
-import '../css/Signup.css';
+import React, { useState } from 'react';
+import UserPool from '../UserPool';
 
+export default () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-class Signup extends Component{
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            email: '',
-            password: ''
-        }
-    }
-
-    onSubmit = event =>{
+    const onSubmit = event => {
         event.preventDefault();
-        UserPool.signUp(this.state.email,this.state.password,[],null,(err,data) =>{
-            if(err) console.error(err);
+
+        UserPool.signUp(email, password, [], null, (err, data) => {
+            if (err) console.error(err);
             console.log(data);
-        })
+        });
     };
 
-    render()
-    {
-        return (
-            <div className='container center_div'>
-                <h1>SIGNUP</h1>
-                <form onSubmit={this.onSubmit}>
-                    <div className='input-group mb-3'>
-                        <span className="input-group-text">Email</span>
-                        <input type="text" className='form-control' value={this.state.email} onChange={event => this.setState({ email : event.target.value})}/>
-                    </div>
-                    <div className="input-group mb-3">
-                        <span className="input-group-text">Password</span>
-                        <input type="password" className='form-control' value={this.state.password} onChange={event => this.setState({ password : event.target.value})}/>
-                    </div>
-                    <button type="submit" className='btn btn-dark'>Sign Up</button>
-                </form>
-            </div>
-        );
-    }
-}
-
-export default Signup;
+    return (
+        <div className='container center_div'>
+            <h1>SIGNIN</h1>
+            <form onSubmit={onSubmit}>
+                <div className='input-group mb-3'>
+                    <span className="input-group-text">Email</span>
+                    <input type="text" className='form-control' value={email} onChange={event => setEmail(event.target.value)}/>
+                </div>
+                <div className="input-group mb-3">
+                    <span className="input-group-text">Password</span>
+                    <input type="password" className='form-control' value={password} onChange={event => setPassword(event.target.value)}/>
+                </div>
+                <button type="submit" className='btn btn-dark'>Sign In</button>
+            </form>
+        </div>
+    );
+};
