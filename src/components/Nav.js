@@ -12,6 +12,7 @@ class Nav extends Component{
                         <div className="navbar-nav">
                             <a className="nav-item nav-link active" href="/signin">Sign In</a>
                             <a className="nav-item nav-link active" href="/login">Login</a>
+                            <a className="nav-item nav-link active" href="/lambda">Test Lambda</a>
                         </div>
                     </div>
                 </nav>

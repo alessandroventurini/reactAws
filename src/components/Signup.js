@@ -1,33 +1,39 @@
-import React, { useState } from 'react';
-import UserPool from '../UserPool';
+import React, {Component} from 'react';
+import Status from "./Status";
 
-export default () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
 
-    const onSubmit = event => {
-        event.preventDefault();
+class Signup extends Component{
 
-        UserPool.signUp(email, password, [], null, (err, data) => {
-            if (err) console.error(err);
-            console.log(data);
-        });
-    };
+    state = {
+        email: '',
+        password:''
+    }
 
-    return (
-        <div className='container center_div'>
-            <h1>SIGNIN</h1>
-            <form onSubmit={onSubmit}>
-                <div className='input-group mb-3'>
-                    <span className="input-group-text">Email</span>
-                    <input type="text" className='form-control' value={email} onChange={event => setEmail(event.target.value)}/>
-                </div>
-                <div className="input-group mb-3">
-                    <span className="input-group-text">Password</span>
-                    <input type="password" className='form-control' value={password} onChange={event => setPassword(event.target.value)}/>
-                </div>
-                <button type="submit" className='btn btn-dark'>Sign In</button>
-            </form>
-        </div>
-    );
-};
+    onChange = (key,value) =>{
+        this.setState({[key]:value});
+    }
+
+    render() {
+        return(
+            <div className='container center_div'>
+                <h1>SIGN IN</h1>
+                <form>
+                    <div className='input-group mb-3'>
+                        <span className="input-group-text">Email</span>
+                        <input type="text" className='form-control' placeholder={'Email'} onChange={event => this.onChange('email',event.target.value)}/>
+                    </div>
+                    <div className="input-group mb-3">
+                        <span className="input-group-text">Password</span>
+                        <input type="password" className='form-control' placeholder={'password'} onChange={event => this.onChange('password',event.target.value)}/>
+                    </div>
+                    <button className='btn btn-dark'>Sign Up</button>
+                    <Status/>
+                </form>
+
+            </div>
+        )
+    }
+
+}
+
+export default Signup;
