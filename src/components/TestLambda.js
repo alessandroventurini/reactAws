@@ -19,8 +19,9 @@ class TestLambda extends Component{
         const data = { "frase" : this.state.frase}
         axios
             .post(api,data)
-            .then((response)=>{
-                console.log(response);
+            .then((response)=>{;
+                console.log(response.data.body)
+                this.onChange("result",response.data.body);
             })
             .catch((error) =>{
                 console.error(error);
