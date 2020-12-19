@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import Status from "./Status";
-
 
 class Signup extends Component{
 
@@ -27,7 +25,6 @@ class Signup extends Component{
                         <input type="password" className='form-control' placeholder={'password'} onChange={event => this.onChange('password',event.target.value)}/>
                     </div>
                     <button className='btn btn-dark'>Sign Up</button>
-                    <Status/>
                 </form>
 
             </div>
